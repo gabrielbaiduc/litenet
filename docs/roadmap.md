@@ -137,7 +137,19 @@
    - Integration with other ML frameworks
 
 ## Initial Focus Areas
-1. Implement tensor operations specific to time series analysis
-2. Create efficient data structures for temporal data
-3. Develop core forecasting algorithms
-4. Build validation and testing infrastructure for time series
+1. Implement core tensor data structure
+2. Implement fundamental tensor operations
+3. Extend core tensor operations to handle time-series data
+4. Develop core forecasting algorithms
+5. Build validation and testing infrastructure for time series
+
+
+### 1. Core Tensor Data Structure (Design Decisions)
+- Row-major memory layout exclusively
+- Contiguous memory blocks only (no views or discontiguous memory)
+- Double precision (float64) as primary data type
+- Simple error handling with explicit failure modes
+- Direct memory management without pooling or garbage collection
+- Explicit shape specification without automatic inference
+- Basic arithmetic and reduction operations initially (add, subtract, multiply, divide) (sum, mean, max, min) (no dot product, no transpose or linear algebra operations)
+- No automatic broadcasting or type conversion
