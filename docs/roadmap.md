@@ -1,3 +1,5 @@
+# TODO: compress and simplify this roadmap.
+
 # Litenet Project Roadmap
 
 ## 1. Core Tensor Operations (C Implementation)
@@ -144,7 +146,7 @@
 5. Build validation and testing infrastructure for time series
 
 
-### 1. Core Tensor Data Structure (Design Decisions)
+### 1. Core Tensor Data Structure for N-Dimensional Tensors (Design Decisions)
 - Row-major memory layout exclusively
 - Contiguous memory blocks only (no views or discontiguous memory)
 - Double precision (float64) as primary data type
