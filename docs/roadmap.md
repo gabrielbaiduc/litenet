@@ -1,19 +1,23 @@
-# TODO: compress and simplify this roadmap.
-
 # Litenet Project Roadmap
 
-## 1. Core Tensor Operations (C Implementation)
-### 1.1 Basic Tensor Structure
-- Design memory layout for n-dimensional tensors
-- Implement tensor creation and memory management
+## 1. Core: The Tensor
+### 1.1 Basic Tensor Data Structure
+- Design memory layout for N-dimensional tensors
+   - Row-Major layout exclusively
+   - float64 as primary data type
+- Tensor creation/removal and associated memory management
+   - Direct memory management without pooling or garbage collection
 - Define basic tensor properties (shape, stride, dtype)
+   - Explicit shape specification without automatic inference
 - Implement tensor view/reshape operations
+- Simple error handling with explicit failure modes
 
 ### 1.2 Fundamental Operations
 - Element-wise operations (add, subtract, multiply, divide)
 - Matrix multiplication
 - Reduction operations (sum, mean, max, min)
 - Broadcasting mechanisms
+   - We might skip.
 - Basic linear algebra operations (transpose, dot product)
 - Memory-efficient operations (in-place operations)
 
@@ -34,12 +38,11 @@
 - Time-based indexing and resampling
 - Missing value handling for temporal data
 
-## 2. Python Interface for Tensor Operations
+## 2. Python API
 ### 2.1 Python Bindings
 - Create Python C extensions using Python/C API
 - Implement wrapper classes for C tensor structures
 - Design Pythonic API for tensor operations
-- Error handling and memory management
 - Type conversion between Python and C
 
 ### 2.2 High-level Tensor API
@@ -49,7 +52,7 @@
 - Documentation and type hints
 - Unit testing framework
 
-## 3. Machine Learning Framework
+## 3. Statistical & ML Framework
 ### 3.1 Core Components
 - Automatic differentiation engine
 - Optimization algorithms (SGD, Adam, etc.)
@@ -91,7 +94,7 @@
 - Seasonal performance analysis
 - Forecast horizon management
 
-## 4. Project Infrastructure
+## 4. Infrastructure
 ### 4.1 Build System
 - CMake configuration
 - Python package setup
@@ -111,47 +114,3 @@
 - Performance benchmarks
 - Memory leak detection
 
-## Development Phases
-
-1. **Phase 1: Time Series Foundation**
-   - Basic tensor operations essential for time series (1.1, 1.2)
-   - Time series specific operations (1.4)
-   - Python bindings for time series operations
-   - Time series data handling and preprocessing
-
-2. **Phase 2: Forecasting Models**
-   - Core statistical components
-   - Basic forecasting models (Historical Average, Simple Exponential Smoothing)
-   - Advanced forecasting models (Holt-Winters, SARIMA)
-   - Intermittent demand models (Croston family)
-
-3. **Phase 3: Production Infrastructure**
-   - Model validation and testing framework
-   - Time series specific metrics
-   - Model persistence and versioning
-   - Performance optimization for production use
-   - Batch prediction capabilities
-
-4. **Phase 4: Framework Extension**
-   - Additional tensor operations
-   - Support for other ML algorithms
-   - Advanced features (GPU support, distributed computing)
-   - Integration with other ML frameworks
-
-## Initial Focus Areas
-1. Implement core tensor data structure
-2. Implement fundamental tensor operations
-3. Extend core tensor operations to handle time-series data
-4. Develop core forecasting algorithms
-5. Build validation and testing infrastructure for time series
-
-
-### 1. Core Tensor Data Structure for N-Dimensional Tensors (Design Decisions)
-- Row-major memory layout exclusively
-- Contiguous memory blocks only (no views or discontiguous memory)
-- Double precision (float64) as primary data type
-- Simple error handling with explicit failure modes
-- Direct memory management without pooling or garbage collection
-- Explicit shape specification without automatic inference
-- Basic arithmetic and reduction operations initially (add, subtract, multiply, divide) (sum, mean, max, min) (no dot product, no transpose or linear algebra operations)
-- No automatic broadcasting or type conversion
