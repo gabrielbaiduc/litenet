@@ -2,8 +2,6 @@
 
 ## 2024-11-02 (Morning Update)
 
-**NOTE TO SELF:** """The tone of this summary, along with the language and the depth of explanation detail is very sensible. Use this as a template for future summaries."""
-
 This morning we focused on setting up the development environment.
 
 Created the project and associated local and github repositories. Set up the initial project structure with `roadmap.md` and `journal.md` for planning and progress tracking.
@@ -26,3 +24,6 @@ Refined project focus. We'll try to prioritize time-series forecasting capabilit
 Decided to implement N-D Tensors from the get-go. Made a granular task list to implement the Core Tensor Data Structure and Fundamental Tensor Operations with several simplifying design decisions. 
 
 Began implementing the Tensor data structure in C @ src/c/core/tensor/`tensor.h` and `tensor.c`.
+
+## 2024-11-03
+
