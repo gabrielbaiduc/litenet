@@ -14,7 +14,4 @@ typedef struct {
 Tensor* tensor_create(const size_t* shape, size_t ndim);
 void tensor_free(Tensor* tensor);
 
-// Helper functions
-// size_t tensor_calculate_index(const Tensor* tensor, const size_t* indices);
-
 #endif // LITENET_TENSOR_H 

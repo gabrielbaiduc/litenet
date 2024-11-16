@@ -1,6 +1,6 @@
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
-#include "../core/tensor/tensor.h"
+#include "../tensor/tensor.h"
 
 typedef struct {
     PyObject_HEAD
