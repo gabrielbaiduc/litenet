@@ -30,7 +30,13 @@ message(STATUS "Python_LIBRARIES: ${Python_LIBRARIES}")
 # Create shared library for Python extension
 add_library(litenet_core SHARED
     src/c/tensor/tensor.c
-    src/c/python/tensormodule.c
+    src/c/python_binder/tensormodule.c
+)
+
+# Set library properties
+set_target_properties(litenet_core PROPERTIES
+PREFIX ""
+OUTPUT_NAME "_litenet_core"
 )
 
 # Add Python include directories
@@ -39,11 +45,7 @@ target_include_directories(litenet_core PRIVATE
     ${CMAKE_SOURCE_DIR}/src/c
 )
 
-# Set library properties
-set_target_properties(litenet_core PROPERTIES
-    PREFIX ""
-    OUTPUT_NAME "litenet"
-)
-
 # Link against Python libraries
-target_link_libraries(litenet_core PRIVATE Python::Python)
+target_link_libraries(litenet_core PRIVATE
+    ${Python_LIBRARIES}
+)
