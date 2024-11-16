@@ -1,5 +1,6 @@
 # CMake orchestrates the build process. In simple terms, the build process is compiling and linking our own code and external dependencies. 
-# This file is the configuration file for CMake. It tells CMake what to do. It does't actually compile or link, it just configures - creates a recipe or build system/build file.
+# This file is the configuration file for CMake. It tells CMake what to do. It does't actually compile or link, it just configures - creates a recipe or build system/build file. 
+# IE.: it generates 'Makefiles' (what are these???)
 # Final compilation is done via the CLI.
 cmake_minimum_required(VERSION 3.15)
 project(litenet C)
