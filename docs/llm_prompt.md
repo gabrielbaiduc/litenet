@@ -12,5 +12,5 @@ In general, I want your answers to be concise but not terse. Avoid bulletpoints.
 
 To build the project, we use CMake. We have a CMakeLists.txt file that is configured to use the appropriate Python installation and related files. 
 
-We have a rudimentary project structure with a `src` directory skeleton with a basic implementation of the tensor data structure and a create function that allocates memory for it.
+We have a rudimentary project structure with a `src` directory skeleton with a basic implementation of the tensor data structure and a create function that allocates memory for it with other skeleton files to allow for importing the library in a Python interpreter.
 
