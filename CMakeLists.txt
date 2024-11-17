@@ -38,6 +38,7 @@ set_target_properties(litenet_core PROPERTIES
 PREFIX ""
 OUTPUT_NAME "_litenet_core"
 LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/src/python/litenet"
+SUFFIX ".so"
 )
 
 # Add Python include directories
@@ -47,4 +48,4 @@ target_include_directories(litenet_core PRIVATE
 )
 
 # Link against Python libraries
-target_link_libraries(litenet_core PRIVATE ${Python_LIBRARIES} )
+target_link_libraries(litenet_core PRIVATE ${Python_LIBRARIES} Python::Python)

@@ -2,6 +2,6 @@
 
 __version__ = "0.1.0"
 
-from .tensor import Tensor
+from ._litenet_core import Tensor
 
 __all__ = ['Tensor']
